@@ -91,6 +91,12 @@ export class HttpServer {
       headers['Accept-Language'] = (req.headers['Accept-Language'] as string[]).join(';');
     }
 
+    // LOGZ.IO GRAFANA CHANGE :: DEV-20896 Add logz headers to puppeeter render request
+    if (req.headers['x-auth-token']) {
+      headers['x-auth-token'] = req.headers['x-auth-token'] + ';';
+    }
+    // LOGZ.IO GRAFANA CHANGE :: end
+
     const options: RenderOptions = {
       url: req.query.url,
       width: req.query.width,

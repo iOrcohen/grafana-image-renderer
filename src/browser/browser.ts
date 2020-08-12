@@ -89,6 +89,12 @@ export class Browser {
       headers['Accept-Language'] = this.config.acceptLanguage;
     }
 
+    // LOGZ.IO GRAFANA CHANGE :: DEV-20896 Add logz headers to puppeeter render request
+    if (options.headers['x-auth-token']) {
+      headers['x-auth-token'] = options.headers['x-auth-token'];
+    }
+    // LOGZ.IO GRAFANA CHANGE :: end
+
     options.headers = headers;
   }
 

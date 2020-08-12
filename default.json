@@ -19,9 +19,7 @@
   },
   "rendering": {
     "chromeBin": null,
-    "args": [
-      "--no-sandbox"
-    ],
+    "args": ["--no-sandbox"],
     "ignoresHttpsErrors": false,
 
     "timezone": null,
